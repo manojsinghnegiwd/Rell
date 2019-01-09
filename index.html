@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./libs/Rell.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="mount"></div>
+        <script type="text/javascript">
+
+            class Message {
+
+                constructor () {
+
+                    this.state = {
+                        name: 'Manoj'
+                    }
+
+                }
+                
+                render () {
+                    
+                    return `<div>{this.state.name} {name}</div>`
+
+                }
+
+            }
+
+            Rell.Component(Message)
+
+            Rell.render(
+                `
+                    <div>
+                        <span>
+                            <Message></Message>
+                            <Message></Message>
+                            <Message></Message>
+                        </span>
+                    </div>
+                `
+            , document.getElementById('mount'))
+        </script>
+    </body>
+</html>
